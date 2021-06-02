@@ -1,2 +1,2 @@
 // import the server and start it
-console.log("Wasssup!?!?")
+console.log("Nothing")
