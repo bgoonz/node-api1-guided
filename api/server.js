@@ -11,7 +11,7 @@ server.use(express.json())
 
 // [GET] / (Hello World endpoint)
 server.use("*",(req,res)=>{
-    res.status(200).json({message:"404 Not Found!!!"})
+    res.status(404).json({message:"404 Not Found!!!"})
 })
 
 // [GET] /api/dogs/:id (R of CRUD, fetch dog by :id)
