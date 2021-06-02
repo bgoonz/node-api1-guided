@@ -18,7 +18,14 @@ server.use("*",(req,res)=>{
 
 // [GET] /api/dogs/:id (R of CRUD, fetch dog by :id)
 // [GET] /api/dogs (R of CRUD, fetch all dogs)
-server.get("/api/dogs")
+server.get("/api/dogs", (req,res)=>{
+    Dog.findAll()
+        .then(dogs =>{
+            console.log(dogs)
+            res.status(200).json(dogs)
+        })
+
+})
 
 // [POST] /api/dogs (C of CRUD, create new dog from JSON payload)
 // [PUT] /api/dogs/:id (U of CRUD, update dog with :id using JSON payload)
