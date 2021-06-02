@@ -14,6 +14,11 @@ server.use(express.json())
 
 
 // [GET] /api/dogs/:id (R of CRUD, fetch dog by :id)
+server.get("/api/dogs/:id",(req,res)=>{
+    const idVar = req.params.id
+    res.json(idVar)
+})
+
 // [GET] /api/dogs (R of CRUD, fetch all dogs)
 server.get("/api/dogs", (req,res)=>{
     Dog.findAll()
