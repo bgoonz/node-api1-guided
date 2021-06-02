@@ -78,6 +78,7 @@ server.put("/api/dogs/:id", async (req,res)=>{
 // [DELETE] /api/dogs/:id (D of CRUD, remove dog with :id)
 server.delete("/api/dogs/:id", async (req,res)=>{
     try{
+        throw "holy crap!"
         const {id} = req.params
         const deletedDog = await Dog.delete(id)
         if(!deletedDog){
@@ -86,7 +87,7 @@ server.delete("/api/dogs/:id", async (req,res)=>{
             res.status(200).json(deletedDog)
         }        
     }catch(err){
-        res.status(500).json({message:err.message})
+        res.status(500).json({message:err})
     }
 })
 // [GET] / (Hello World endpoint)
