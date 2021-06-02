@@ -27,7 +27,6 @@ server.get("/api/dogs", (req,res)=>{
         .catch(err=>{
             res.status(500).json({message:err.message})
         })
-
 })
 
 // [POST] /api/dogs (C of CRUD, create new dog from JSON payload)
