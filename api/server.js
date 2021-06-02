@@ -80,7 +80,11 @@ server.delete("/api/dogs/:id", async (req,res)=>{
     try{
         const {id} = req.params
         const deletedDog = await Dog.delete(id)
-        res.status(200).json(deletedDog)
+        if(!deletedDog){
+            res.status(404).json("Dog not found")
+        }else{
+            res.status(200).json(deletedDog)
+        }        
     }catch(err){
         res.status(500).json({message:err.message})
     }
