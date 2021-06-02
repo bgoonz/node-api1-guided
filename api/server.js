@@ -47,15 +47,14 @@ server.post("/api/dogs", (req,res)=>{
     if(!newDog.name || !newDog.weight){
         res.status(422).json("Need name and weight")
     }else{
-
-    }
-    Dog.create(newDog)
+        Dog.create(newDog)
         .then(dog=>{
             res.status(201).json(dog)
         })
         .catch(err=>{
             res.status(500).json({message:err.message})
         })
+    }    
 })
 // [PUT] /api/dogs/:id (U of CRUD, update dog with :id using JSON payload)
 // [DELETE] /api/dogs/:id (D of CRUD, remove dog with :id)
