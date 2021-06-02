@@ -51,7 +51,6 @@ server.post("/api/dogs", (req,res)=>{
         .catch(err=>{
             res.status(500).json({message:err.message})
         })
-
 })
 // [PUT] /api/dogs/:id (U of CRUD, update dog with :id using JSON payload)
 // [DELETE] /api/dogs/:id (D of CRUD, remove dog with :id)
