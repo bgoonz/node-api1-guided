@@ -10,6 +10,10 @@ server.use(express.json())
 // ENDPOINTS
 
 // [GET] / (Hello World endpoint)
+server.use("*",(req,res)=>{
+    res.status(200).json({message:"Hello World!"})
+})
+
 // [GET] /api/dogs/:id (R of CRUD, fetch dog by :id)
 // [GET] /api/dogs (R of CRUD, fetch all dogs)
 // [POST] /api/dogs (C of CRUD, create new dog from JSON payload)
