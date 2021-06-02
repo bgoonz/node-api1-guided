@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "server":"nodemon index.js",
+    "server": "nodemon index.js",
     "ketchup": "git fetch && git reset --hard origin/lecture"
   },
   "dependencies": {
@@ -13,6 +13,7 @@
     "shortid": "^2.2.16"
   },
   "devDependencies": {
+    "eslint": "^7.27.0",
     "nodemon": "^2.0.7"
   }
 }
