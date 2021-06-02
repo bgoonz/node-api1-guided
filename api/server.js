@@ -46,7 +46,7 @@ server.post("/api/dogs", (req,res)=>{
     const newDog = req.body
     Dog.create(newDog)
         .then(dog=>{
-            res.json(dog)
+            res.status(201).json(dog)
         })
         .catch(err=>{
             res.status(500).json({message:err.message})
