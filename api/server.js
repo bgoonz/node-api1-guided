@@ -24,6 +24,9 @@ server.get("/api/dogs", (req,res)=>{
             console.log(dogs)
             res.status(200).json(dogs)
         })
+        .catch(err=>{
+            res.status(500).json({message:err.message})
+        })
 
 })
 
